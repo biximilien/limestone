@@ -1,14 +1,22 @@
-%nav.navbar.navbar-expand-sm.navbar-light.bg-light.navbar-fixed-top
+%nav.navbar{role: 'navigation', 'aria-label': 'main navigation'}
   .container
-    = link_to "Limestone", "/", class: "navbar-brand"
-    %button.navbar-toggler{type: "button", data: { toggle: "collapse", target:"#nav_loggedin" }}
-      %span.navbar-toggler-icon
-    #nav_loggedin.collapse.navbar-collapse
-      %ul.navbar-nav.mr-auto
-        %li.nav-item= link_to "Dashboard", dashboard_path, class: "nav-link"
+    .navbar-brand
+      = link_to root_path, class: "navbar-item" do
+        = image_tag 'logo.png', width: 112, height: 28
+
+      %a.navbar-burger.burger{role: 'button', 'aria-label': 'menu', 'aria-expanded': false, data: {target: 'navbar-menu'}}
+        %span{'aria-hidden': true}
+        %span{'aria-hidden': true}
+        %span{'aria-hidden': true}
+
+    #navbar-menu.navbar-menu
+      .navbar-start
+        = link_to "Dashboard", dashboard_path, class: "navbar-item"
         - if current_user.product.pro?
-          %li.nav-item= link_to "Pro Page", pro_path, class: "nav-link"
-      %ul.navbar-nav.ml-auto
+          = link_to "Pro Page", pro_path, class: "navbar-item"
+
+      .navbar-end
+        -# TODO
         .li.nav-item.dropdown
           = link_to avatar(current_user, :sm), "#", {"data-toggle": "dropdown", role: "button", "aria-haspopup": true, "aria-expanded": false}
           .dropdown-menu.dropdown-menu-right

@@ -1,38 +1,47 @@
-%h1 Tell people about your pricing!
+%section.section
+  .container
 
-%p pages#pricing
+    %h1.title Tell people about your pricing!
+    %p pages#pricing
 
-.card-group.row.justify-content-md-center
-  .card.col.col-lg-4
-    .card-img-top
-      %h1.text-center Basic
-    .card-body
-      %h5.card-title.text-center
-        $9.00 USD
-        %small /month
-      .card-text
-        %ul.list-group.list-group-flush
-          %li.list-group-item
-            = icon(:check)
-            Get access
-    .card-body
-      = link_to 'Get Basic', new_registration_path(resource_name, plan_id: Product.active&.first&.plan&.active&.first&.id), class: 'btn btn-primary btn-block'
+    .columns
+      .column.is-1
+      .column.is-4
+        .card
+          .card-header.has-text-centered
+            %h1.card-header-title Basic
+          .card-image
+            %figure.image.is-3by1
+              = image_tag 'logo.png'
+          .card-content
+            %h5.has-text-centered
+              $9.00 USD
+              %small /month
+              %ul
+                %li
+                  = icon(:check)
+                  Get access
+          .card-footer
+            = link_to 'Get Basic', new_registration_path(resource_name, plan_id: Product.active&.first&.plan&.active&.first&.id), class: 'button is-primary is-fullwidth'
 
-  .col.col-1
-  .card.col.col-lg-4
-    .card-img-top
-      %h1.text-center Pro
-    .card-body
-      %h5.card-title.text-center
-        $15.00 US
-        %small /month
-      .card-text
-        %ul.list-group.list-group-flush
-          %li.list-group-item
-            = icon(:check)
-            Get access
-          %li.list-group-item
-            = icon(:check)
-            Access to Pro page
-    .card-body
-      = link_to 'Get PRO', new_registration_path(resource_name, plan_id: Product.active&.second&.plan&.active&.first&.id), class: 'btn btn-primary btn-block'
+      .column.is-2
+      .column.is-4
+        .card
+          .card-header.has-text-centered
+            %h1.card-header-title Pro
+          .card-image
+            %figure.image.is-3by1
+              = image_tag 'logo.png'
+          .card-content
+            %h5.has-text-centered
+              $15.00 USD
+              %small /month
+              %ul
+                %li
+                  = icon(:check)
+                  Get access
+                %li
+                  = icon(:check)
+                  Access to Pro page
+          .card-footer
+            = link_to 'Get PRO', new_registration_path(resource_name, plan_id: Product.active&.second&.plan&.active&.first&.id), class: 'button is-primary is-fullwidth'

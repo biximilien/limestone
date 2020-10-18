@@ -1,8 +1,0 @@
-- type: parallel
-  steps:
-    - name: rspec
-      service: web
-      command: bin/ci rspec
-    - name: rubocop
-      service: web
-      command: rubocop

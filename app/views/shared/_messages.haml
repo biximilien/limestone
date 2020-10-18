@@ -1,0 +1,8 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    %article.message
+      .message-header
+        %p= name
+        %button.delete{'aria-label': 'delete'}
+      .message-body
+        = msg

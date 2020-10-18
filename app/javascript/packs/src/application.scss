@@ -1,9 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+@import '~bulma/bulma';
 
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
-
-@import '../../../assets/stylesheets/avatars';
-@import '../../../assets/stylesheets/modals';
-@import '../../../assets/stylesheets/alerts';
-@import '../../../assets/stylesheets/stripe'

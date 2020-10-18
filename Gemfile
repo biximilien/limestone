@@ -33,7 +33,7 @@ gem "image_processing", "~> 1"
 gem "mini_magick", ">= 4.3.5"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.2"
+gem "pg"
 
 # Impersonate other users
 gem "pretender", "~> 0.3"
@@ -113,3 +113,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data"
+
+# Run configuration
+gem 'foreman'

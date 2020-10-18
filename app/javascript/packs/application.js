@@ -20,7 +20,6 @@ require("channels")
 // External libs
 import 'jquery'
 window.$ = window.jQuery = require('jquery')
-import 'bootstrap'
 
 import './subscriptions'
 // TODO why is $ undefined in modals?
