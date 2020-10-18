@@ -1,7 +1,14 @@
-# Limestone
-[![<archonic>](https://circleci.com/gh/archonic/limestone.svg?style=svg)](https://circleci.com/gh/archonic/workflows/limestone/tree/master)
+# SaaS Template 💸
 
-Limestone is a boilerplate SaaS app built with Rails 6 on Ruby 2.7.1 and has an opinionated integration with NPM using [Webpacker](https://github.com/rails/webpacker) and [Stimulus](https://stimulusjs.org/).
+TODO: Summary of diverging settings
+
+This fork of [Limestone](https://github.com/archonic/limestone) by [Archonic](https://github.com/archonic) is a boilerplate SaaS app template built with Rails 6 on Ruby 2.7.1 and has diverging opinionated defaults on the Gemset and Deployment philosophy.
+
+Summary of diverging changes from upstream :
+* docker
+* ci
+* Boostrap CSS framework is replaced with Bulma
+* ...
 
 Limestone assumes you want each user to pay for access to your SaaS. If instead you want users to belong to accounts and have billing scoped to accounts, try [Limestone Accounts](https://github.com/archonic/limestone-accounts).
 
@@ -37,23 +44,17 @@ The [gemset](https://github.com/archonic/limestone/blob/master/Gemfile) has been
 
 ## Notes
 * RSpec controller tests have been omitted in favour of requests tests.
-* You can run tests locally with `docker-compose run web rspec`
 
 ## Pre-requisites
 
 ### Development
-* Install [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/)
 * A [Stripe](https://dashboard.stripe.com/register) account and a [Stripe API Key](https://stripe.com/docs/keys).
 
 ### Test
-* [Codeship](https://codeship.com/) files are in place - just create an account and integrate with your repo. You will need to create your [codeship.aes file](https://documentation.codeship.com/pro/builds-and-configuration/environment-variables/#downloading-your-aes-key), [install jet](https://documentation.codeship.com/pro/jet-cli/installation/) and run `jet encrypt .env .env.encrypted`.
-* [CircleCI](https://circleci.com/) files are in place - just create an account and integrate with your repo.
-* **NOTE** Limestone expects your product prices to have trial days > 0. If you don't create a trial, testing will get the error `Pay::Error: This customer has no attached payment source or default payment method.`.
-* You could also just run test locally with `docker-compose run web rspec` or `docker-compose exec web rspec` if you've already run `docker-compose up`.
+* **NOTE** Limestone expects your product prices to have trial days > 0. If you don't create a trail, testing will get the error `Pay::Error: This customer has no attached payment source or default payment method.`.
 
 ### Production
 * A cloud storage account [compatible with ActiveStorage](https://edgeguides.rubyonrails.org/active_storage_overview.html#setup).
-* Because Docker is already configured, you may want a Kubernetes host ([GKE](https://cloud.google.com/kubernetes-engine/), [AWS](https://aws.amazon.com/kubernetes/) or [DigitalOcean](https://www.digitalocean.com/products/kubernetes/)).
 
 ## Getting Started
 1. Clone this repository at the most recent tag and `cd` into it:
@@ -74,19 +75,8 @@ The [gemset](https://github.com/archonic/limestone/blob/master/Gemfile) has been
 
     You probably want to update the `ADMIN_*` environment variables. If you want a different `COMPOSE_PROJECT_NAME` and database name, now is the best time to do that.
 
-4. Run `docker-compose run web yarn install --pure-lockfile` to download images, build your development image and install node_modules. This will take a while.
-
-5. Run `docker-compose up` to run your project and it's dependencies.
-
-5. Once everything is up, run `docker-compose exec web rails db:prepare` to create DB, load schema and seed. Seeding will also create your plan(s) in Stripe.
-
 6. Visit [http://localhost:3000](http://localhost:3000) and rejoice :tada: You can login using the Admin user defined in `.env`. Keep in mind your admin doesn't have active billing. Enter a [test card](https://stripe.com/docs/testing#cards) when prompted or by visiting /subscribe.
-
-7. See the [Limestone Wiki](https://github.com/archonic/limestone/wiki) more about [development with Docker](https://github.com/archonic/limestone/wiki/Development-with-Docker)
 
 ### Note About Flipper / Public User Registration
 1. The [Flipper gem](https://github.com/jnunemaker/flipper) controls feature flagging and provides a UI. Visit the `/admin/flipper`.
 2. The feature called `public_registration` has been created for you (during seeding). You can enable/disable this to control user registration :clap:
-
-### Setting up production
-A wiki will be written about this. Feel free to help out here if you're familiar with Docker/Kubernetes.
