@@ -1,10 +1,12 @@
-%h1.display-1 You're in!
-%p dashboard#show
-Populate your app with features and make a nifty dashboard.
+%section.section
+  .container
+    %h1.title You're in!
+    %p dashboard#show
+    Populate your app with features and make a nifty dashboard.
 
-%p
-  = avatar(current_user, :xs)
-  = avatar(current_user, :sm)
-  = avatar(current_user, :md)
-  = avatar(current_user, :lg)
-  = avatar(current_user, :xl)
+    %p
+      = avatar(current_user, :xs)
+      = avatar(current_user, :sm)
+      = avatar(current_user, :md)
+      = avatar(current_user, :lg)
+      = avatar(current_user, :xl)
