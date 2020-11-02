@@ -2,11 +2,12 @@
 
 TODO: Summary of diverging settings
 
-This fork of [Limestone](https://github.com/archonic/limestone) by [Archonic](https://github.com/archonic) is a boilerplate SaaS app template built with Rails 6 on Ruby 2.7.1 and has diverging opinionated defaults on the Gemset and Deployment philosophy.
+Forked from [Limestone](https://github.com/archonic/limestone) by [Archonic](https://github.com/archonic).
+This fork is a boilerplate SaaS app template built with Rails 6 on Ruby 2.7.1 and has diverging and opinionated defaults on the Gemset and Deployment philosophy based on my personal preferences.
 
 Summary of diverging changes from upstream :
-* docker
-* ci
+* Removed Docker
+* Removed CI
 * Boostrap CSS framework is replaced with Bulma
 * ...
 

@@ -1,5 +1,5 @@
 !!!
-%html
+%html.has-navbar-fixed-top
   %head
     %title Limestone
     %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type" }
@@ -24,3 +24,4 @@
     = render user_signed_in? ? "shared/navbar/signed_in" : "shared/navbar/signed_out"
     = render 'shared/messages'
     = yield
+    = render 'shared/footer'

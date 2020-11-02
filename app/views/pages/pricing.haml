@@ -1,42 +1,56 @@
+%section.hero.is-primary
+  .hero-body
+    .container
+      %h1.title SaaS Template
+      %h2.subtitle Build and sell your amazing software!
+
 %section.section
   .container
 
-    %h1.title Tell people about your pricing!
-    %p pages#pricing
+    %h1.title Phasellus consequat aliquam turpis
+    %p
+      Phasellus consequat aliquam turpis, non blandit elit pharetra et. In
+      eleifend varius purus, fermentum ultrices lacus fringilla a. Vivamus
+      volutpat sollicitudin dapibus. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Sed bibendum velit eu volutpat laoreet. Proin euismod
+      efficitur nibh vitae porttitor. Integer ut sem commodo, vehicula est quis,
+      volutpat lorem. Aenean convallis lectus non enim ornare ullamcorper. Donec
+      sem tellus, iaculis vitae leo sed, maximus dictum eros. Donec id tempor
+      tortor. Phasellus non eleifend arcu.
+
+    %hr/
 
     .columns
-      .column.is-1
       .column.is-4
         .card
           .card-header.has-text-centered
-            %h1.card-header-title Basic
+            %h1.card-header-title Basic Access Plan
           .card-image
-            %figure.image.is-3by1
-              = image_tag 'logo.png'
+            %figure.image.is-3by2
+              = image_tag 'https://via.placeholder.com/600x400'
           .card-content
             %h5.has-text-centered
-              $9.00 USD
-              %small /month
-              %ul
+              %b $9.00
+              %small USD/month
+              %ul{style: 'min-height: 6.5rem;'}
                 %li
                   = icon(:check)
                   Get access
           .card-footer
-            = link_to 'Get Basic', new_registration_path(resource_name, plan_id: Product.active&.first&.plan&.active&.first&.id), class: 'button is-primary is-fullwidth'
+            = link_to 'Get Basic', new_registration_path(resource_name, plan_id: Product.active&.first&.plans&.active&.first&.id), class: 'button is-primary is-fullwidth'
 
-      .column.is-2
       .column.is-4
         .card
           .card-header.has-text-centered
-            %h1.card-header-title Pro
+            %h1.card-header-title Pro Access Plan
           .card-image
-            %figure.image.is-3by1
-              = image_tag 'logo.png'
+            %figure.image.is-3by2
+              = image_tag 'https://via.placeholder.com/600x400'
           .card-content
             %h5.has-text-centered
-              $15.00 USD
-              %small /month
-              %ul
+              %b $15.00
+              %small USD/month
+              %ul{style: 'min-height: 6.5rem;'}
                 %li
                   = icon(:check)
                   Get access
@@ -44,4 +58,29 @@
                   = icon(:check)
                   Access to Pro page
           .card-footer
-            = link_to 'Get PRO', new_registration_path(resource_name, plan_id: Product.active&.second&.plan&.active&.first&.id), class: 'button is-primary is-fullwidth'
+            = link_to 'Get PRO', new_registration_path(resource_name, plan_id: Product.active&.second&.plans&.active&.first&.id), class: 'button is-primary is-fullwidth'
+
+      .column.is-4
+        .card
+          .card-header.has-text-centered
+            %h1.card-header-title Corporate Access Plan
+          .card-image
+            %figure.image.is-3by2
+              = image_tag 'https://via.placeholder.com/600x400'
+          .card-content
+            %h5.has-text-centered
+              %b $100.00
+              %small USD/month
+              %ul{style: 'min-height: 6.5rem;'}
+                %li
+                  = icon(:check)
+                  Get access
+                %li
+                  = icon(:check)
+                  Access to Pro page
+                %li
+                  = icon(:check)
+                  Shenanigans
+
+          .card-footer
+            = link_to 'Get PRO', new_registration_path(resource_name, plan_id: Product.active&.second&.plans&.active&.first&.id), class: 'button is-primary is-fullwidth'
