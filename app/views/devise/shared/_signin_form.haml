@@ -1,7 +1,15 @@
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = f.input :email, label: false, autofocus: true, class: 'form-control', placeholder: "Email"
-  = f.input :password, label: false, autocomplete: "off", class: 'form-control', placeholder: "Password"
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    .control
+      = f.email_field :email, label: false, autofocus: true, class: 'input', placeholder: t(:email)
+  .field
+    .control
+      = f.password_field :password, label: false, autocomplete: "off", class: 'input', placeholder: t(:password)
+
   - if devise_mapping.rememberable?
-    = f.input :remember_me, as: :boolean, label: 'Stay signed in'
-  .actions
-    = f.submit "Sign in", class: 'btn btn-primary btn-block'
+    %label.checkbox
+      = f.check_box :remember_me
+      = t(:remember_me)
+
+  .buttons
+    = f.submit "Sign in", class: 'button is-primary'

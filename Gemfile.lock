@@ -349,9 +349,6 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
-    simple_form (5.0.3)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
     simplecov (0.19.1)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -447,7 +444,6 @@ DEPENDENCIES
   sendgrid-ruby (~> 6.3)
   shoulda-matchers (~> 3.1)
   sidekiq (~> 6)
-  simple_form (~> 5)
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
