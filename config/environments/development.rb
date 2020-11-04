@@ -87,5 +87,5 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # In case you want to use subdomains
-  config.hosts << "lvh.me"
+  # config.hosts << "lvh.me"
 end
